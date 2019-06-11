@@ -1,0 +1,13 @@
+body {
+   display: grid;
+   justify-content: center;
+   background-color: black;
+   padding-top: 100px; 
+}
+
+canvas {
+   filter: opacity(0.8);
+   border-radius: 5px;
+   
+}
+
