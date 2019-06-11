@@ -41,20 +41,10 @@ function mousePressed() {
 }
 
 function draw() {
-  background(21, 32, 51);
-  textFont(mainFont)
-  textSize(26)
-  fill("Red")
-  let title = text("Tron 2000", 275, 140);
-  fill("yellow")
-  textSize(16)
-  let startText = text("START", 350, 200);
-  fill("yellow")
+menu()
   if (press) {
-    // startText.clear();
-    // title.clear()
+     start = false;
     background(21, 32, 51);
-    start = false;
     s.death();
     s.update();
     s.show();
@@ -70,6 +60,20 @@ function draw() {
     text(`P1: ${pointsRed}`, 650, 30);
   }
 }
+
+function menu() {
+    background(21, 32, 51);
+    textFont(mainFont)
+    textSize(26)
+    fill("Red")
+    let title = text("Tron 2000", 275, 140);
+    fill("yellow")
+    textSize(16)
+    let startText = text("START", 350, 200);
+    fill("yellow")
+    textSize(8)
+    let foot = text("by jz", 370, 400);   
+    }
 
 function keyPressed() {
   switch (keyCode) {
@@ -94,7 +98,6 @@ function keyPressed() {
       arrowDown = true;
       arrowLeft = false;
       if (arrowRight) {
-
         p.dir(1, 0);
       }
       break;
