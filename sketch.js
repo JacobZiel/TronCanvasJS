@@ -40,14 +40,14 @@ function draw() {
   if (press) {
     start = false;
     background(21, 32, 51);
-    s.death();
     s.update();
     s.show();
-    p.death();
     p.update();
     p.show();
     s.total++
     p.total++
+    p.death();
+    s.death();
     textSize(16);
     fill("blue")
     text(`P2: ${pointsBlue}`, 50, 30);
