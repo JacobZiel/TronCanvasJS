@@ -1,7 +1,7 @@
 body {
    display: grid;
    justify-content: center;
-   background-color: black;
+   background-color: #1d1e1e;
    padding-top: 100px; 
 }
 
@@ -9,7 +9,31 @@ canvas {
    filter: opacity(0.8);
    border-radius: 5px;
    border: 8px solid gray;
-   box-shadow: 0px -1px 35px 14px rgba(87, 87, 87, 0.57);
-   
+   animation-name: glow;
+   animation-duration: 15s;
+   animation-iteration-count: infinite;
+}
+
+@keyframes glow {
+   0% {
+      box-shadow: 0px -1px 32px -12px rgba(214, 214, 214, 0.82);
+   }
+
+   25% {
+      box-shadow: 0px -1px 32px -2px rgba(214, 214, 214, 0.82);
+   }
+
+   50% {
+      box-shadow: 0px -1px 32px 13px rgba(214, 214, 214, 0.82);
+   }
+
+   75% {
+      box-shadow: 0px -1px 32px -2px rgba(214, 214, 214, 0.82);
+   }
+
+   100% {
+       box-shadow: 0px -1px 32px -12px rgba(214, 214, 214, 0.82);
+       }
+   }
 }
 

@@ -1,6 +1,6 @@
-let reset = true;
 
-function Snake(x, y, color) {
+//#region Bike Default Settings
+function Bike(x, y, color) {
   this.x = x;
   this.y = y;
   this.xspeed = 0;
@@ -8,21 +8,13 @@ function Snake(x, y, color) {
   this.total = 0;
   this.tail = [];
 
-  this.eat = function (pos) {
-    var d = dist(this.x, this.y, pos.x, pos.y);
-    if (d < 1) {
-      this.total++;
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   this.dir = function (x, y) {
     this.xspeed = x;
     this.yspeed = y;
   }
-
+  //#endregion
+//#region Crash Logic
   this.death = function () {
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
@@ -57,8 +49,8 @@ function Snake(x, y, color) {
       }
     }
   }
-
-
+//#endregion
+//#region update Logic
   this.update = function () {
 
     if (this.total >= 1) {
@@ -70,13 +62,11 @@ function Snake(x, y, color) {
     this.x = constrain(this.x, 0, width - scl);
     this.y = constrain(this.y, 0, height - scl);
   }
-
+  //#endregion
+//#region Show/adjust bike
   this.show = function () {
     fill(color);
     stroke(0, 0, 0, 0)
-
-
-    // pixelDensity(1)
     for (var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x, this.tail[i].y, scl, scl);
     }
@@ -84,3 +74,4 @@ function Snake(x, y, color) {
 
   }
 }
+//#endregion
