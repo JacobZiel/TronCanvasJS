@@ -25,6 +25,14 @@ function setup() {
   s = new Bike(00, 250, "red");
   p = new Bike(800, 250, "green")
   frameRate(60);
+  arrowUp = false;
+  arrowDown = false;
+  arrowLeft = false;
+  arrowRight = false;
+  wUp = false;
+  sDown = false;
+  aLeft = false;
+  dRight = false;
 }
 
 function mousePressed() {
@@ -141,7 +149,6 @@ function keyPressed() {
       break;
     case 13:
       if(press){
-      this.setup()
       p.dir(-0.5, 0);
       s.dir(0.5, 0);
       gameStart = true;
