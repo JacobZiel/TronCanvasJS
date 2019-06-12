@@ -16,8 +16,6 @@ let press = false;
 let start = true;
 let mainFont
 
-
-
 function preload() {
   mainFont = loadFont('./font.ttf')
 }
@@ -51,7 +49,7 @@ function draw() {
     s.death();
     textSize(12);
     fill("red")
-    text(`P2: ${pointsBlue}`, 50, 30);
+    text(`P1: ${pointsBlue}`, 50, 30);
     text("WSAD", 50, 480);
     fill("green")
     text(`P2: ${pointsRed}`, 300, 30);
@@ -142,6 +140,7 @@ function keyPressed() {
       }
       break;
     case 13:
+      if(press){
       this.setup()
       p.dir(-0.5, 0);
       s.dir(0.5, 0);
@@ -150,6 +149,7 @@ function keyPressed() {
       arrowDown=true;
       wUp=true;
       sDown=true;
+      }
       break;
     default:
       break;
