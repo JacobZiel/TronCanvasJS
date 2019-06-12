@@ -1,5 +1,6 @@
 
-//#region Bike Default Settings
+let gameStart = false;
+
 function Bike(x, y, color) {
   this.x = x;
   this.y = y;
@@ -13,56 +14,52 @@ function Bike(x, y, color) {
     this.xspeed = x;
     this.yspeed = y;
   }
-  //#endregion
-//#region Crash Logic
+  
   this.death = function () {
+
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
       var d = dist(this.x, this.y, pos.x, pos.y)
       let b = dist(s.x, s.y, pos.x, pos.y);
       let g = dist(p.x, p.y, pos.x, pos.y);
+      if(gameStart){
       if (d < 1) {
         this.total = 0;
         this.tail = [];
         this.xspeed = 0
         this.yspeed = 0
+        if (p.total == 0) {
+          pointsBlue++
+          gameStart = false;
+        } else if (s.total == 0) {
+          pointsRed++
+          gameStart = false;
+        }
+        setup()
       } else if (b < 1) {
+        textCheck2 = false;
         s.total = 0;
         s.tail = [];
         s.xspeed = 0
         s.yspeed = 0
-        textSize(32);
-        fill("green")
-        text("Green Wins!", 100, 300);
-
+        pointsRed++
+        gameStart = false;
+        setup()
       } else if (g < 1) {
+        textCheck2 = false;
         p.total = 0;
         p.tail = [];
         p.xspeed = 0
         p.yspeed = 0
-          textSize(42);
-          fill("red")
-          text("Red Wins!", 300, 300);
-        // setup()
-      } else if (p.total < 2) {
-        this.xspeed = 0
-        this.yspeed = 0
-        textSize(42);
-        fill("red")
-        text("Red Wins!", 100, 300);
-        // pointsBlue++
-      } else if (s.total < 2) {
-        this.xspeed = 0
-        this.yspeed = 0
-        // pointsRed++
-        textSize(42);
-        fill("green")
-        text("Green Wins!", 100, 300);
+        pointsBlue++
+        gameStart = false;
+        setup()
       }
+    
     }
   }
-//#endregion
-//#region update Logic
+}
+ 
   this.update = function () {
 
     if (this.total >= 1) {
@@ -74,8 +71,7 @@ function Bike(x, y, color) {
     this.x = constrain(this.x, 0, width - scl);
     this.y = constrain(this.y, 0, height - scl);
   }
-  //#endregion
-//#region Show/adjust bike
+ 
   this.show = function () {
     fill(color);
     stroke(0, 0, 0, 0)
@@ -88,4 +84,3 @@ function Bike(x, y, color) {
 }
 
 
-//#endregion
