@@ -2,19 +2,20 @@
 var s;
 let p;
 var scl = 10;
-let arrowUp = true;
-let arrowDown = true;
-let arrowLeft = true;
-let arrowRight = true;
-let wUp = true;
-let sDown = true;
-let aLeft = true;
-let dRight = true;
+let arrowUp = false;
+let arrowDown = false;
+let arrowLeft = false;
+let arrowRight = false;
+let wUp = false;
+let sDown = false;
+let aLeft = false;
+let dRight = false;
 pointsBlue = 0;
 pointsRed = 0;
 let press = false;
 let start = true;
 let mainFont
+let winner
 //#endregion
 
 function preload() {
@@ -48,11 +49,13 @@ function draw() {
     p.total++
     p.death();
     s.death();
-    textSize(16);
-    fill("blue")
+    textSize(12);
+    fill("red")
     text(`P2: ${pointsBlue}`, 50, 30);
+    fill("green")
+    text(`P2: ${pointsRed}`, 300, 30);
     fill("yellow")
-    text(`P1: ${pointsRed}`, 650, 30);
+    text("ENTER to start", 610, 30);
   }
 }
 
@@ -138,6 +141,12 @@ function keyPressed() {
       break;
     case 13:
       this.setup()
+      p.dir(-1, 0);
+      s.dir(1, 0);
+      arrowUp=true;
+      arrowDown=true;
+      wUp=true;
+      sDown=true;
       break;
     default:
       break;

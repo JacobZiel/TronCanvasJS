@@ -26,26 +26,38 @@ function Bike(x, y, color) {
         this.tail = [];
         this.xspeed = 0
         this.yspeed = 0
-
       } else if (b < 1) {
         s.total = 0;
         s.tail = [];
         s.xspeed = 0
         s.yspeed = 0
-        pointsblue=1; //blue
-        setup()
+        textSize(32);
+        fill("green")
+        text("Green Wins!", 100, 300);
+
       } else if (g < 1) {
         p.total = 0;
         p.tail = [];
         p.xspeed = 0
         p.yspeed = 0
-        pointsRed=1 //red
-        setup()
+          textSize(42);
+          fill("red")
+          text("Red Wins!", 300, 300);
+        // setup()
       } else if (p.total < 2) {
-        pointsBlue=1
+        this.xspeed = 0
+        this.yspeed = 0
+        textSize(42);
+        fill("red")
+        text("Red Wins!", 100, 300);
+        // pointsBlue++
       } else if (s.total < 2) {
-        pointsRed=1
-      
+        this.xspeed = 0
+        this.yspeed = 0
+        // pointsRed++
+        textSize(42);
+        fill("green")
+        text("Green Wins!", 100, 300);
       }
     }
   }
@@ -74,4 +86,6 @@ function Bike(x, y, color) {
 
   }
 }
+
+
 //#endregion

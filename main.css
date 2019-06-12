@@ -7,8 +7,7 @@ body {
 
 canvas {
    filter: opacity(0.8);
-   border-radius: 5px;
-   border: 8px solid gray;
+   border-radius: 10px;
    animation-name: glow;
    animation-duration: 15s;
    animation-iteration-count: infinite;
