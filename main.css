@@ -2,17 +2,20 @@ body {
    display: grid;
    justify-content: center;
    background-color: #1d1e1e;
-   padding-top: 40px; 
+   padding-top: 80px; 
     background-image: linear-gradient(rgba(8, 136, 255, 0.7) .01em, transparent .1em),
     linear-gradient(90deg, rgba(8, 136, 255, 0.7) .01em, transparent .1em);
-    background-size: 0.7em 0.7em;
+    background-size: 0.8em 0.8em;
 }
 
 h1 {
-   margin-top: 23 px;
+   margin-top: 23px;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   color: rgba(8, 136, 255, 0.712);
+   color: rgba(8, 136, 255, 0.719);
    font-weight: 100;
+   animation-name: glowText;
+   animation-duration: 10s;
+   animation-iteration-count: infinite;
 }
 canvas {
    filter: opacity(0.9);
@@ -22,6 +25,7 @@ canvas {
    animation-iteration-count: infinite;
 
 }
+
 
 @keyframes glow {
    0% {
@@ -44,5 +48,27 @@ canvas {
        box-shadow: 0px -1px 32px -12px rgba(214, 214, 214, 0.82);
        }
    }
-}
+
+   @keyframes glowText {
+      0% {
+         text-shadow: 0px 0px 5px rgba(214, 214, 214, 0.82);
+      }
+
+      25% {
+         text-shadow: 0px 0px 10px rgba(214, 214, 214, 0.82);
+      }
+
+      50% {
+         text-shadow: 0px 0px 15px rgba(214, 214, 214, 0.82);
+      }
+
+      75% {
+         text-shadow: 0px 0px 10px rgba(214, 214, 214, 0.82);
+      }
+
+      100% {
+         text-shadow: 0px 0px 5px rgba(214, 214, 214, 0.82);
+      }
+   }
+
 

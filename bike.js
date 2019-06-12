@@ -1,6 +1,3 @@
-
-let gameStart = false;
-
 function Bike(x, y, color) {
   this.x = x;
   this.y = y;
@@ -8,7 +5,6 @@ function Bike(x, y, color) {
   this.yspeed = 0;
   this.total = 0;
   this.tail = [];
-
 
   this.dir = function (x, y) {
     this.xspeed = x;

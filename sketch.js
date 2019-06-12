@@ -15,15 +15,17 @@ pointsRed = 0;
 let press = false;
 let start = true;
 let mainFont
+let gameStart = false;
+//#endregion
 
 function preload() {
   mainFont = loadFont('./font.ttf')
 }
 
 function setup() {
-  createCanvas(800, 500);
-  s = new Bike(00, 250, "red");
-  p = new Bike(800, 250, "green")
+  createCanvas(1000, 600);
+  s = new Bike(00, 300, "red");
+  p = new Bike(1000, 300, "green")
   frameRate(60);
   arrowUp = false;
   arrowDown = false;
@@ -36,7 +38,7 @@ function setup() {
 }
 
 function mousePressed() {
-  let d = dist(mouseX, mouseY, 350, 200);
+  let d = dist(mouseX, mouseY, 460, 300);
   if (d < 100) {
     press = true;
   }
@@ -55,30 +57,30 @@ function draw() {
     p.total++
     p.death();
     s.death();
-    textSize(12);
+    textSize(16);
     fill("red")
     text(`P1: ${pointsBlue}`, 50, 30);
-    text("WSAD", 50, 480);
+    text("WSAD", 50, 580);
     fill("green")
     text(`P2: ${pointsRed}`, 300, 30);
-    text("↑↓←→", 700, 480);
+    text("↑↓←→", 890, 580);
     fill("yellow")
-    text("ENTER to start", 610, 30);
+    text("ENTER to start", 730, 30);
   }
 }
 
 function menu() {
   background(21, 32, 51);
   textFont(mainFont)
-  textSize(26)
+  textSize(36)
   fill("Red")
-  let title = text("Tron 2000", 275, 140);
+  text("Tron 2000", 342, 140);
   fill("yellow")
-  textSize(16)
-  let startText = text("START", 350, 200);
+  textSize(18)
+  text("START", 460, 300);
   fill("yellow")
-  textSize(8)
-  let foot = text("by jz", 370, 400);
+  textSize(10)
+  text("by jz", 480, 500);
 }
 
 function keyPressed() {
