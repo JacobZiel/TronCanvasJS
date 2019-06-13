@@ -33,7 +33,6 @@ function Bike(x, y, color) {
         }
         setup()
       } else if (b < 1) {
-        textCheck2 = false;
         s.total = 0;
         s.tail = [];
         s.xspeed = 0
@@ -42,7 +41,6 @@ function Bike(x, y, color) {
         gameStart = false;
         setup()
       } else if (g < 1) {
-        textCheck2 = false;
         p.total = 0;
         p.tail = [];
         p.xspeed = 0
